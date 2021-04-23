@@ -11,6 +11,6 @@ complete.csv is the uncleaned data.
 
 data_prep.R guides you through how I prepped the data for the app, including extracting colors with regex and dealing with messy/inconsistent location data.
 
-app.R is the app itself.
+within "appitself", you'll find app.R (the app itself) and the cleaned data.
 
 www holds the gif and additional CSS/HTML files to make it look nice!
