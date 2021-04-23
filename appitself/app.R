@@ -6,7 +6,6 @@ library(dplyr)
 library(stringr)
 library(shinythemes)
 library(shinydashboard)
-setwd("~/Documents/Codes/ufo/ufoapp")
 ufo <- read.csv("clean_il_ufo")
 
 cov2 <- colorFactor(palette = c("#FF0A33", "#FFFFFF", "#DEDEE3","#FFAD62","#6CC678","#F49097","#CF8D4F", "#D5EBEB","#2BA3DE", "#5D5B5D", "#F5E960","#FFC833","#C3B2FB", "#00AEB8","#44DFCD"), 
@@ -35,6 +34,8 @@ body <- mainPanel(
 
 
 ui <- fluidPage(theme = shinytheme("cyborg"),
+                #fixing name
+                tags$head(HTML("<title>UFO Sightings In Illinois</title>")),
                 #extra stylesheet for google fonts
                 tags$link(rel = "stylesheet", type="text/css", href="extrastyles.css"),
                 #HTML for google font - @import has issues on computer
@@ -42,10 +43,9 @@ ui <- fluidPage(theme = shinytheme("cyborg"),
 
     # title box & gif
     titlePanel(title = tags$div(
-      tags$div(img(src='UFO_ScoutCraft2.gif')),
-      tags$div(
-                  h2("UFO Sightings in Illinois")
-                   ))),
+      img(src='UFO_ScoutCraft2.gif'),
+      "UFO Sightings in Illinois"
+                   )),
     # Sidebar
         sidebarPanel(
             checkboxInput("heatmode", label = h4("Heatmap mode"), value = FALSE),
@@ -62,13 +62,20 @@ ui <- fluidPage(theme = shinytheme("cyborg"),
             fluidRow(
               tags$div(
                 tags$div("data 1999-2014"),
-                "dataset courtesy of ",
+                " dataset courtesy of ",
                 tags$a(href="https://www.kaggle.com/NUFORC/ufo-sightings", 
                        "kaggle")),
                 tags$div(
-                  "read full encounters at ",
+                  " read full encounters at ",
                   tags$a(href="http://www.nuforc.org/webreports/ndxevent.html", 
-                         "NUFORC")))),
+                         "NUFORC")),
+              tags$div(" project files at ",
+                       tags$a(href="https://github.com/lilphoebe/ufo-il-map", "github")),
+              tags$div(
+                " more of my projects ",
+                tags$a(href="http://phoebethatcher.com", 
+                       "here"))
+              )),
             body)
 
 
