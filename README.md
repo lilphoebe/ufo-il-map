@@ -1,11 +1,11 @@
-###UFO Sightings In Illinois 
-####A leaflet-based RShiny app for lookin' at UFO sightings
+### UFO Sightings In Illinois 
+#### A leaflet-based RShiny app for lookin' at UFO sightings
 
 I found [this](https://www.kaggle.com/NUFORC/ufo-sightings) fun dataset (originally scraped [here](https://github.com/planetsig/ufo-reports) by planetsig) and thought it would make a great app while I was teaching myself how to use leaflet.
 
 Found the corny vintage UFO gif on the [GifCities](https://gifcities.org/) search engine
 
-####What's in here:
+#### What's in here:
 
 complete.csv is the uncleaned data.
 
